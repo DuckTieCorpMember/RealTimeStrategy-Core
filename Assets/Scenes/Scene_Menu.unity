@@ -159,8 +159,8 @@ Camera:
   m_GameObject: {fileID: 448362044}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.23454368, g: 0.327354, b: 0.5566038, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -248,27 +248,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1560420774727410112, guid: 2deb35a706791554894761c150b0c017,
-        type: 3}
-      propertyPath: onlineScene
-      value: Assets/Scenes/Scene_Map1.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560420774727410112, guid: 2deb35a706791554894761c150b0c017,
-        type: 3}
-      propertyPath: offlineScene
-      value: Assets/Scenes/Scene_Menu.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560420774727410112, guid: 2deb35a706791554894761c150b0c017,
-        type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560420774727410112, guid: 2deb35a706791554894761c150b0c017,
-        type: 3}
-      propertyPath: spawnPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 7293555562860623240, guid: 7a304423939035a4abf292be601f0ad2,
-        type: 3}
     - target: {fileID: 1560420774727410115, guid: 2deb35a706791554894761c150b0c017,
         type: 3}
       propertyPath: m_RootOrder
@@ -446,3 +425,72 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1001 &2454700075445732529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975416, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454700076897975417, guid: ffb95f25db256ba4398afaa74bf25fc0,
+        type: 3}
+      propertyPath: m_Name
+      value: GameOverDisplay
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffb95f25db256ba4398afaa74bf25fc0, type: 3}
