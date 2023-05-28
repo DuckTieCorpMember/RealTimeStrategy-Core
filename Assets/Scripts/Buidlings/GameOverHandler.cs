@@ -6,6 +6,7 @@ using System;
 
 public class GameOverHandler : NetworkBehaviour
 {
+    public static event Action ServerOnGameOver;
     public static event Action<string> ClientOnGameOver;
 
     private List<UnitBase> basesSpawned = new List<UnitBase>();
@@ -37,6 +38,8 @@ public class GameOverHandler : NetworkBehaviour
         int playerID = basesSpawned[0].connectionToClient.connectionId;
 
         RpcGameOver($"Player {playerID}");
+
+        ServerOnGameOver?.Invoke();
     }
     #endregion
 
