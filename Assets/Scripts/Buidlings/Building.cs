@@ -6,6 +6,7 @@ using System;
 
 public class Building : NetworkBehaviour
 {
+    [SerializeField] private GameObject buildingPreview;
     [SerializeField] private Sprite icon = null;
     [SerializeField] private int id = -1;
     [SerializeField] private int price = 100;
@@ -19,6 +20,7 @@ public class Building : NetworkBehaviour
     public Sprite GetIcon() { return icon; }
     public int GetId() { return id; }
     public int GetPrice() { return price; }
+    public GameObject GetBuildingPreview() { return buildingPreview; }
 
     #region Server
     public override void OnStartServer()
