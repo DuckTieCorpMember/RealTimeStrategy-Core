@@ -6,6 +6,7 @@ using Mirror;
 public class TeamColorSetter : NetworkBehaviour
 {
     [SerializeField] private Renderer[] colorRenderers = new Renderer[0];
+    [SerializeField] private SpriteRenderer[] colorSprites = new SpriteRenderer[0];
     [SyncVar(hook =nameof(HandleTeamColorUpdated))]
     private Color teamColor = new Color();
 
@@ -24,6 +25,10 @@ public class TeamColorSetter : NetworkBehaviour
         foreach(Renderer renderer in colorRenderers)
         {
             renderer.material.SetColor("_BaseColor", newColor);
+        }
+        foreach(SpriteRenderer spriteRenderer in colorSprites)
+        {
+            spriteRenderer.color = newColor;
         }
     }
     #endregion

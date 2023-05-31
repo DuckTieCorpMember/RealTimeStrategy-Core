@@ -5,6 +5,7 @@ using Mirror;
 
 public class RTSPlayer : NetworkBehaviour
 {
+    [SerializeField] private Transform cameraTransform = null;
     [SerializeField] private LayerMask buildingBlockLayer = new LayerMask();
     [SerializeField] private Building[] buildings = new Building[0];
     [SerializeField] private float buildingRangeLimit = 5f;
@@ -21,6 +22,7 @@ public class RTSPlayer : NetworkBehaviour
     public List<Building> GetMyBuildings() { return myBuildings; }
     public int GetResources() { return resources; }
     public Color GetTeamColor() { return teamColor; }
+    public Transform GetCameraTransform() { return cameraTransform; }
 
     public bool CanPlaceBuilding(BoxCollider buildingCollider, Vector3 point)
     {
