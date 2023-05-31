@@ -5,25 +5,51 @@ using Mirror;
 
 public class RTSPlayer : NetworkBehaviour
 {
+    [SerializeField] private LayerMask buildingBlockLayer = new LayerMask();
     [SerializeField] private Building[] buildings = new Building[0];
+    [SerializeField] private float buildingRangeLimit = 5f;
 
     [SyncVar(hook = nameof(ClientHandleResourceUpdated))]
     private int resources = 500;
 
     public event Action<int> ClientOnResourcesUpdated;
 
-    [SerializeField] private List<Unit> myUnits = new List<Unit>();
-    [SerializeField] private List<Building> myBuildings = new List<Building>();
+    private Color teamColor = new Color();
+    private List<Unit> myUnits = new List<Unit>();
+    private List<Building> myBuildings = new List<Building>();
     public List<Unit> GetMyUnits() { return myUnits; }
     public List<Building> GetMyBuildings() { return myBuildings; }
     public int GetResources() { return resources; }
+    public Color GetTeamColor() { return teamColor; }
+
+    public bool CanPlaceBuilding(BoxCollider buildingCollider, Vector3 point)
+    {
+        if (Physics.CheckBox(point + buildingCollider.center, buildingCollider.size / 2, Quaternion.identity, buildingBlockLayer))
+        {
+            return false;
+        }
+
+        foreach (Building building in myBuildings)
+        {
+            if ((point - building.transform.position).sqrMagnitude <= buildingRangeLimit * buildingRangeLimit)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    #region Server
+    [Server]
+    public void SetTeamColor(Color newteamColor)
+    {
+        teamColor = newteamColor;
+    }
     [Server]
     public void SetResources(int newResources)
     {
         resources = newResources;
     }
-
-    #region Server
     public override void OnStartServer()
     {
         Unit.ServerOnUnitSpawned += ServerHandleUnitSpawn;
@@ -55,8 +81,15 @@ public class RTSPlayer : NetworkBehaviour
 
         if(buildingToPlace == null) { return; }
 
+        if(resources < buildingToPlace.GetPrice()) { return; }
+
+        BoxCollider buildingCollider = buildingToPlace.GetComponent<BoxCollider>();
+        if(!CanPlaceBuilding(buildingCollider, point)) { return; }
+
         GameObject buildingInstance = Instantiate(buildingToPlace.gameObject, point, buildingToPlace.transform.rotation);
         NetworkServer.Spawn(buildingInstance, connectionToClient);
+
+        SetResources(resources - buildingToPlace.GetPrice());
     }
 
     private void ServerHandleUnitSpawn(Unit unit)

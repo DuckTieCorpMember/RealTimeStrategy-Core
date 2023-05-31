@@ -7,6 +7,7 @@ using System;
 
 public class Unit : NetworkBehaviour
 {
+    [SerializeField] private int resourceCost = 10;
     [SerializeField] UnitMovement unitMovement = null;
     [SerializeField] private Targeter targeter = null;
     [SerializeField] private Health health = null;
@@ -21,6 +22,7 @@ public class Unit : NetworkBehaviour
 
     public UnitMovement GetUnitMovement() { return unitMovement; }
     public Targeter GetTargeter() { return targeter; }
+    public int GetResourceCost() { return resourceCost; }
 
     #region Server
     public override void OnStartServer()

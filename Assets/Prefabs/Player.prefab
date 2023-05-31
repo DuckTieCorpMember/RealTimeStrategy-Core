@@ -65,8 +65,12 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  buildingBlockLayer:
+    serializedVersion: 2
+    m_Bits: 1281
   buildings:
   - {fileID: 6280278223178333033, guid: cd9df326740012d4aa3421ebbfaf0485, type: 3}
   - {fileID: 6280278223178333033, guid: ae0a1c32b1c189f4899427bcc18b5752, type: 3}
+  buildingRangeLimit: 5
   myUnits: []
   myBuildings: []

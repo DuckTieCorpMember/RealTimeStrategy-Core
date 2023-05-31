@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mirror;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class UnitMovement : NetworkBehaviour
 {
@@ -41,13 +42,19 @@ public class UnitMovement : NetworkBehaviour
         agent.ResetPath();
     }
 
+    [Server]
+    public void ServerMove(Vector3 position)
+    {
+        targeter.ClearTarget();
+
+        if (!NavMesh.SamplePosition(position, out NavMeshHit hit, 1, NavMesh.AllAreas)) { return; }
+        agent.SetDestination(hit.position);
+    }
+
     [Command]
     public void CmdMove(Vector3 position)
     {
-        targeter.ClearTarget(); 
-
-        if(!NavMesh.SamplePosition(position, out NavMeshHit hit, 1, NavMesh.AllAreas)) { return; }
-        agent.SetDestination(hit.position);
+        ServerMove(position);
     }
 
     private void ServerHandleGameOver()
