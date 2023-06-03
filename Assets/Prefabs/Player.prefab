@@ -187,8 +187,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1281
   buildings:
-  - {fileID: 6280278223178333033, guid: cd9df326740012d4aa3421ebbfaf0485, type: 3}
+  - {fileID: 5106163082586155527, guid: 35d168e2b734a4b4a937788e9e846197, type: 3}
   - {fileID: 6280278223178333033, guid: ae0a1c32b1c189f4899427bcc18b5752, type: 3}
+  - {fileID: 5106163082586155527, guid: 98e4f5544859fcd4886066a0d145afb9, type: 3}
   buildingRangeLimit: 5
 --- !u!114 &886803199319014910
 MonoBehaviour:
@@ -208,5 +209,5 @@ MonoBehaviour:
   playerCameraTransform: {fileID: 8959472286832027053}
   speed: 15
   screenBorderThikness: 10
-  screenXLimits: {x: -15, y: 15}
-  screenZLimits: {x: -25, y: 10}
+  screenXLimits: {x: -50, y: 50}
+  screenZLimits: {x: -50, y: 50}

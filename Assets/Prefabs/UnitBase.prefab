@@ -307,6 +307,11 @@ PrefabInstance:
       propertyPath: price
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5232807931303682234, guid: 66ad88e2b6f857e48a18348027655eac,
+        type: 3}
+      propertyPath: buildingPreview
+      value: 
+      objectReference: {fileID: 1775747853612324325}
     - target: {fileID: 5945488790594469940, guid: 66ad88e2b6f857e48a18348027655eac,
         type: 3}
       propertyPath: m_IsActive
